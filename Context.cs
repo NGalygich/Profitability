@@ -23,7 +23,7 @@ public class ApplicationContext : DbContext
 
         // // Use connection string
         // optionsBuilder.UseSqlServer(connectionString );
-
+        //services.AddDbContext<AppDbContext>(options => options.UseSqlServer("Data Source=192.168.0.116;database=test_galyga;user id=sa;password=compasdt;Integrated Security=false;Trusted_Connection=False;Persist Security Info=True;MultipleActiveResultSets=true"));
         optionsBuilder.UseSqlServer("server=192.168.0.116;database=test_galyga;user id=sa;password=compasdt;Integrated Security=false;Trusted_Connection=False;Persist Security Info=True;MultipleActiveResultSets=true");
     }
     
