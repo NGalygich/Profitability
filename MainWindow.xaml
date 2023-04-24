@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="createButton" Content="Создать" Click="cteateButton_Click" Height="50" Width="50"/>
+        <!-- <Button x:Name="createButton" Content="Создать" Click="deleteButton_Click" /> -->
     </Grid>
 </Window>
