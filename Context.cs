@@ -31,6 +31,6 @@ public class DatabaseContext : DbContext
     {
       optionsBuilder.UseSqlServer(System.Configuration.ConfigurationManager.ConnectionStrings["DbConnect"].ConnectionString);
     }
-    public DatabaseContext() => Database.EnsureCreated();
+    public DatabaseContext(){} // => Database.EnsureCreated(); // создание таблицы не проходит
 
 }

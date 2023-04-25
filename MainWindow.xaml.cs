@@ -33,9 +33,9 @@ namespace Profitability
                 User alice = new User { Name = "Alice", Age = 26 };
                 MessageBox.Show("добавляем их в бд");
                 // // добавляем их в бд
-                db.Users.Add(tom);
-                db.Users.Add(alice);
-                db.SaveChanges();
+                db.Users.Add(tom); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
+                db.Users.Add(alice); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
+                db.SaveChanges(); // команда сохранения проходит
                 //Console.WriteLine("Объекты успешно сохранены");
                 MessageBox.Show("Объекты успешно сохранены");
 
