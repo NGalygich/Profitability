@@ -1,48 +1,27 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using System.Data.Common;
+//using System.Data.Entity;
+using System.Configuration;
 
  
-public class ApplicationContext : DbContext
+public class DatabaseContext : DbContext
 {
-    
-    public DbSet<User> Users => Set<User>();
-    public ApplicationContext() => Database.EnsureCreated();
+    public DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        // var builder = new SqlConnectionStringBuilder
-        // {
-        //     DataSource = @"IP_ADDRESS\INSTANCE",
-        //     InitialCatalog = "DbName",
-        //     UserID = "MyUserId",
-        //     Password = "MyPassword"
-        // };
-
-        // var connectionString = builder.ConnectionString;
-
-        // // Use connection string
-        // optionsBuilder.UseSqlServer(connectionString );
-        //services.AddDbContext<AppDbContext>(options => options.UseSqlServer("Data Source=192.168.0.116;database=test_galyga;user id=sa;password=compasdt;Integrated Security=false;Trusted_Connection=False;Persist Security Info=True;MultipleActiveResultSets=true"));
-        optionsBuilder.UseSqlServer("server=192.168.0.116;database=test_galyga;user id=sa;password=compasdt;Integrated Security=false;Trusted_Connection=False;Persist Security Info=True;MultipleActiveResultSets=true");
+      var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Data Source=192.168.0.116;database=test_galyga;user id=sa;password=compasdt;Integrated Security=false;Trusted_Connection=False;Persist Security Info=True;MultipleActiveResultSets=true"].ConnectionString;
+      optionsBuilder.UseSqlServer(connectionString);
     }
-    
-    /*
-    protected readonly IConfiguration Configuration;
-    public DataContext() => Database.EnsureCreated();
 
-
-    public DataContext(IConfiguration configuration)
+    public DatabaseContext()
     {
-        Configuration = configuration;
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    public DatabaseContext(DbContextOptions s)
+    : base(s)
     {
-        // connect to sql server with connection string from app settings
-        options.UseSqlServer(Configuration.GetConnectionString("server=192.168.0.116;database=test_galyga;user id=sa;password=compasdt;Integrated Security=false;Trusted_Connection=False;Persist Security Info=True;MultipleActiveResultSets=true"));
     }
-
-    public DbSet<User> Users { get; set; }
-    */
 }

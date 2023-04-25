@@ -25,16 +25,16 @@ namespace Profitability
 
         public void cteateButton_Click(object sender, RoutedEventArgs e)
         {
-            using (ApplicationContext db = new ApplicationContext())
+            using (DatabaseContext db = new DatabaseContext())
             {
                 // создаем два объекта User
-                User tom = new User { Name = "Tom", Age = 33 };
-                User alice = new User { Name = "Alice", Age = 26 };
+                //User tom = new User { Name = "Tom", Age = 33 };
+                //User alice = new User { Name = "Alice", Age = 26 };
             
                 // добавляем их в бд
-                db.Users.Add(tom);
-                db.Users.Add(alice);
-                db.SaveChanges();
+                //db.Users.Add(tom);
+                //db.Users.Add(alice);
+                //db.SaveChanges();
                 //Console.WriteLine("Объекты успешно сохранены");
                 MessageBox.Show("Объекты успешно сохранены");
             
