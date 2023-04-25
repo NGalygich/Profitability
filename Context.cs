@@ -16,5 +16,4 @@ public class ApplicationContext : DbContext
     {
       optionsBuilder.UseSqlServer(System.Configuration.ConfigurationManager.ConnectionStrings["DbConnect"].ConnectionString);
     }
-
 }
