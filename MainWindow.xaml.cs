@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 //using System.Data.SqlClient;
 
 namespace Profitability
@@ -21,6 +22,11 @@ namespace Profitability
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public static void Log(string message) 
+        {
+            File.AppendAllText("log.txt", message);
         }
 
         public void cteateButton_Click(object sender, RoutedEventArgs e)
@@ -45,9 +51,9 @@ namespace Profitability
                         //Console.WriteLine("Объекты успешно сохранены");
                         MessageBox.Show("Объекты успешно сохранены");
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Объекты не сохранены");
+                        MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
                     }
 
 
@@ -62,9 +68,9 @@ namespace Profitability
                     // }
                 }
             }
-           catch
+            catch (Exception ex)
            {
-             MessageBox.Show("ошибка");
+             MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
            }
         }
     }
