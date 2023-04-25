@@ -42,12 +42,12 @@ namespace Profitability
                     User tom = new User { Name = "Tom", Age = 33 };
                     User alice = new User { Name = "Alice", Age = 26 };
                     MessageBox.Show("добавляем их в бд");
-                    // // добавляем их в бд
+                    // добавляем их в бд
                     try
                     {
-                        db.Users.Add(tom); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
-                        db.Users.Add(alice); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
-                        db.SaveChanges(); // команда сохранения проходит
+                        db.Users.Add(tom); 
+                        db.Users.Add(alice); 
+                        db.SaveChanges(); 
                         //Console.WriteLine("Объекты успешно сохранены");
                         MessageBox.Show("Объекты успешно сохранены");
                     }
