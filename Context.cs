@@ -7,7 +7,7 @@ using System.Data.Common;
 using System.Configuration;
 
  
-public class DatabaseContext : DbContext
+public class ApplicationContext : DbContext
 {
     // public DbSet<User> Users { get; set; }
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -25,12 +25,13 @@ public class DatabaseContext : DbContext
     // {
     // }
 
-    public DbSet<User> Users { get; set; } = null!;
-
+    //public DbSet<User> Users { get; set; } = null!;
+    public DbSet<User> Users => Set<User>();
+    public ApplicationContext(){} //=> Database.EnsureCreated();
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
       optionsBuilder.UseSqlServer(System.Configuration.ConfigurationManager.ConnectionStrings["DbConnect"].ConnectionString);
     }
-    public DatabaseContext(){} // => Database.EnsureCreated(); // создание таблицы не проходит
+    //public ApplicationContext(){} // => Database.EnsureCreated(); // создание таблицы не проходит
 
 }

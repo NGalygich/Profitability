@@ -25,30 +25,47 @@ namespace Profitability
 
         public void cteateButton_Click(object sender, RoutedEventArgs e)
         {
-            using (DatabaseContext db = new DatabaseContext())
+            try
             {
-                MessageBox.Show("создаем два объекта User");
-                // создаем два объекта User
-                User tom = new User { Name = "Tom", Age = 33 };
-                User alice = new User { Name = "Alice", Age = 26 };
-                MessageBox.Show("добавляем их в бд");
-                // // добавляем их в бд
-                db.Users.Add(tom); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
-                db.Users.Add(alice); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
-                db.SaveChanges(); // команда сохранения проходит
-                //Console.WriteLine("Объекты успешно сохранены");
-                MessageBox.Show("Объекты успешно сохранены");
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    //db.Database.EnsureCreated();
 
+                    MessageBox.Show("создаем два объекта User");
+                    // создаем два объекта User
+                    User tom = new User { Name = "Tom", Age = 33 };
+                    User alice = new User { Name = "Alice", Age = 26 };
+                    MessageBox.Show("добавляем их в бд");
+                    // // добавляем их в бд
+                    try
+                    {
+                        db.Users.Add(tom); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
+                        db.Users.Add(alice); // ошибка при добавлении новогоэлемента в таблицу (таблица не создается)
+                        db.SaveChanges(); // команда сохранения проходит
+                        //Console.WriteLine("Объекты успешно сохранены");
+                        MessageBox.Show("Объекты успешно сохранены");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Объекты не сохранены");
+                    }
+
+
+                    
                 
-            
-                // получаем объекты из бд и выводим на консоль
-                // var users = db.Users.ToList();
-                // Console.WriteLine("Список объектов:");
-                // foreach (User u in users)
-                // {
-                //     Console.WriteLine($"{u.Id}.{u.Name} - {u.Age}");
-                // }
+                    // получаем объекты из бд и выводим на консоль
+                    // var users = db.Users.ToList();
+                    // Console.WriteLine("Список объектов:");
+                    // foreach (User u in users)
+                    // {
+                    //     Console.WriteLine($"{u.Id}.{u.Name} - {u.Age}");
+                    // }
+                }
             }
+           catch
+           {
+             MessageBox.Show("ошибка");
+           }
         }
     }
 }
