@@ -6,15 +6,23 @@
         xmlns:local="clr-namespace:Profitability"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <local:MainVM/>  <!-- Создаем новый VM и соединяем его со View -->
-    </Window.DataContext>
-    <StackPanel>
-        <!--Binding, собственно, соединяет текстовое поле со свойством в VM -->
-        <!--UpdateSourceTrigger, в данном случае, выполняет передачу значение в VM в момент ввода -->
-        <TextBox Width="30" Text="{Binding Number1, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox Width="30" Text="{Binding Number2, UpdateSourceTrigger=PropertyChanged}"/>
-        <!--Mode=OneWay необходим для призязки свойства только для чтения -->
-        <TextBox Width="30" Text="{Binding Number3, Mode=OneWay}" IsReadOnly="True"/>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30%*"/>
+            <RowDefinition Height="30%*"/>
+            <RowDefinition Height="30%*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10%*"/>
+            <ColumnDefinition Width="10%*"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Плановая оплата клиентов:" Margin="5" />
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding InputData}" Width="200" Margin="5" />
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Рабочие дни наемника:" Margin="5" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding InputData}" Width="200" Margin="5" />
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="Мобильная связь:" Margin="5" />
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding InputData}" Width="200" Margin="5" />
+    </Grid>
 </Window>
