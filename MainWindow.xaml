@@ -6,8 +6,15 @@
         xmlns:local="clr-namespace:Profitability"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="createButton" Content="Создать" Click="cteateButton_Click" Height="50" Width="50"/>
-        <!-- <Button x:Name="createButton" Content="Создать" Click="deleteButton_Click" /> -->
-    </Grid>
+    <Window.DataContext>
+        <local:MainVM/>  <!-- Создаем новый VM и соединяем его со View -->
+    </Window.DataContext>
+    <StackPanel>
+        <!--Binding, собственно, соединяет текстовое поле со свойством в VM -->
+        <!--UpdateSourceTrigger, в данном случае, выполняет передачу значение в VM в момент ввода -->
+        <TextBox Width="30" Text="{Binding Number1, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Width="30" Text="{Binding Number2, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--Mode=OneWay необходим для призязки свойства только для чтения -->
+        <TextBox Width="30" Text="{Binding Number3, Mode=OneWay}" IsReadOnly="True"/>
+    </StackPanel>
 </Window>
