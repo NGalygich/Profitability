@@ -14,8 +14,8 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.3*"/>
-            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="0.6*"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Плановая оплата клиентов:" Margin="5" />
