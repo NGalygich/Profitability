@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 //using System.Data.SqlClient;
 
-namespace Profitability
+namespace Profitability.View
 {
     public partial class MainWindow : Window
     {
