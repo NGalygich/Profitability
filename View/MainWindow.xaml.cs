@@ -21,8 +21,16 @@ namespace Profitability.View
     {
         public MainWindow()
         {
-            InitializeComponent();
-            Loaded += MainWindow_Loaded;
+            try
+            {
+                InitializeComponent();
+                Loaded += MainWindow_Loaded;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+            
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
