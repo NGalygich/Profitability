@@ -19,18 +19,18 @@
             <ColumnDefinition Width="0.2*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Плановая оплата клиентов:" Margin="5" />
-        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding InputData}" Width="200" Margin="5" />
-        
-        <Button x:Name="PaymentClientsPlanned" Content="Сохранить" IsDefault="True" Click="SaveButton_Click" Grid.Column="2" Grid.Row="0" Width="200" Margin="5"/>
+        <TextBox x:Name="PaymentClientsPlanned" Grid.Column="1" Grid.Row="0" Text="{Binding InputData1}" Width="200" Margin="5" />
+
+        <Button x:Name="PaymentClientsPlannedButton" Content="Сохранить" IsDefault="True" Click="SaveButton_Click" Grid.Column="2" Grid.Row="0" Width="200" Margin="5"/>
         
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Рабочие дни наемника:" Margin="5" />
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding InputData}" Width="200" Margin="5" />
+        <TextBox x:Name="WorkingDaysMercenary" Grid.Column="1" Grid.Row="1" Text="{Binding InputData2}" Width="200" Margin="5" />
 
-        <Button x:Name="WorkingDaysMercenary" Content="Сохранить" IsDefault="True" Click="SaveButton_Click" Grid.Column="2" Grid.Row="1" Width="200" Margin="5"/>
+        <Button x:Name="WorkingDaysMercenaryButton" Content="Сохранить" IsDefault="True" Click="SaveButton_Click" Grid.Column="2" Grid.Row="1" Width="200" Margin="5"/>
 
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Мобильная связь:" Margin="5" />
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding InputData}" Width="200" Margin="5" />
+        <TextBox x:Name="MobileCommunication" Grid.Column="1" Grid.Row="2" Text="{Binding InputData3}" Width="200" Margin="5" />
 
-        <Button x:Name="MobileCommunication" Content="Сохранить" IsDefault="True" Click="SaveButton_Click" Grid.Column="2" Grid.Row="2" Width="200" Margin="5"/>
+        <Button x:Name="MobileCommunicationButton" Content="Сохранить" IsDefault="True" Click="SaveButton_Click" Grid.Column="2" Grid.Row="2" Width="200" Margin="5"/>
     </Grid>
 </Window>

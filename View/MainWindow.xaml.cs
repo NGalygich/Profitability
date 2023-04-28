@@ -48,13 +48,14 @@ namespace Profitability.View
 
                     MessageBox.Show("создаем два объекта User");
                     // создаем два объекта User
-                //    MobileCommunication record = new MobileCommunication { Name = "Tom", Age = 33 };  раскомментировать
+                    MobileCommunication record = new MobileCommunication();// { Name = "Tom", Age = 33 };
+                    //record.Value = MobileCommunication.Text;
                     //User alice = new User { Name = "Alice", Age = 26 };
                     MessageBox.Show("добавляем их в бд");
                     // добавляем их в бд
                     try
                     {
-                    //    db.MobileCommunications.Add(record); раскоментировать
+                        db.MobileCommunications.Add(record); 
                         //db.Users.Add(alice); 
                         db.SaveChanges(); 
                         //Console.WriteLine("Объекты успешно сохранены");
@@ -64,7 +65,19 @@ namespace Profitability.View
                     {
                         MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
                     }
-
+                    // catch ( FormatException fe )
+                    // {
+                    //     // FormatException isn't caught because it's stored "inside" the FileNotFoundException
+                    // }
+                    // catch ( FileNotFoundException fnfe ) 
+                    // {
+                    //     string innerMessage = "", outerMesage;
+                    //     if (fnfe.InnerException != null)
+                    //         innerMessage = fnfe.InnerException.Message; // Inner exception (FormatException) message
+                    //     outerMesage = fnfe.Message;
+                    //     Console.WriteLine($"Inner Exception:\n\t{innerMessage}");
+                    //     Console.WriteLine($"Outer Exception:\n\t{outerMesage}");
+                    // }        
 
                     
                 

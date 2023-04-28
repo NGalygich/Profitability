@@ -30,7 +30,7 @@ public partial class PovlTeContext : DbContext
         modelBuilder.Entity<MobileCommunication>(entity =>
         {
             entity
-                .HasNoKey()
+                //.HasNoKey()
                 .ToTable("MobileCommunication");
 
             entity.HasIndex(e => e.Date, "UQ__MobileCo__1FFD6BF98965FCCC").IsUnique();
@@ -42,7 +42,7 @@ public partial class PovlTeContext : DbContext
         modelBuilder.Entity<PaymentClientsPlanned>(entity =>
         {
             entity
-                .HasNoKey()
+                //.HasNoKey()
                 .ToTable("PaymentClientsPlanned");
 
             entity.HasIndex(e => e.Date, "UQ__PaymentC__3DCF46488DE13DC8").IsUnique();
@@ -54,7 +54,7 @@ public partial class PovlTeContext : DbContext
         modelBuilder.Entity<WorkingDaysMercenary>(entity =>
         {
             entity
-                .HasNoKey()
+                //.HasNoKey()
                 .ToTable("WorkingDaysMercenary");
 
             entity.HasIndex(e => e.Date, "UQ__WorkingD__7FC03A07DC9F16C5").IsUnique();
