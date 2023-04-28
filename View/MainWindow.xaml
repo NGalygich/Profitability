@@ -16,7 +16,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.6*"/>
             <ColumnDefinition Width="0.6*"/>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.6*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Плановая оплата клиентов:" Margin="5" />
         <TextBox x:Name="PaymentClientsPlanned" Grid.Column="1" Grid.Row="0" Text="{Binding InputValuePCP}" Width="200" Margin="5" />
