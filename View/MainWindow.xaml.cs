@@ -46,7 +46,17 @@ namespace Profitability.View
 
         public void GenerationButton_Click(object sender, RoutedEventArgs e)
         {
-            RepoportGeneration.Generation();
+            try
+            {
+                Account bankAccounts = new Account {ID = 345678, Balance = 541.27};
+                //RepoportGeneration.DisplayInExcel(bankAccounts);
+                RepoportGeneration.DisplayInExcel(bankAccounts);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+                
         }
     }
 }

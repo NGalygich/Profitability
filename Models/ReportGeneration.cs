@@ -4,45 +4,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Office.Interop.Excel;
-using _excel = Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 
-
-public class RepoportGeneration
+namespace Profitability.View
 {
-     _Application excelapp = new _excel.Application();
-    Workbook wb;
-    Worksheet ws;
-    public void CreateFile() {
-        this.wb = excelapp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
-        this.ws = this.wb.Worksheets[1];
-    }
-    public void CreateSheet() {
-        Worksheet worksheet1 = excelapp.Worksheets.Add(After: this.ws);
-    }
-
-    public void SaveAs(string filepath) {
-        wb.SaveAs(filepath);
-    }
-    public static void Generation()
+    public class RepoportGeneration
     {
-        
-        try
+        public static void DisplayInExcel(Account accounts)
         {
-            Excel Excelfile = new Excel();
-            Excelfile.CreateFile();
-            Excelfile.CreateSheet();
-            Excelfile.SaveAs(@"C:/Users/galyga_na/Desktop/ExcelfilebyZeeshan.xlsx");
-            Excelfile.wb.Close();
-            MessageBox.Show("Объект успешно сохранен");
+        
 
+            var excelApp = new Excel.Application();
+            // Make the object visible.
+            excelApp.Visible = true;
+
+            // Create a new, empty workbook and add it to the collection returned
+            // by property Workbooks. The new workbook becomes the active workbook.
+            // Add has an optional parameter for specifying a particular template.
+            // Because no argument is sent in this example, Add creates a new workbook.
+            excelApp.Workbooks.Add();
+
+            // This example uses a single workSheet. The explicit type casting is
+            // removed in a later procedure.
+            Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
+
+            workSheet.Cells[1, "A"] = "ID Number";
+            workSheet.Cells[1, "B"] = "Current Balance";
+
+            var row = 1;
+            //foreach (var acct in accounts)
+            //{
+            //    row++;
+                workSheet.Cells[row, "A"] = accounts.ID;
+                workSheet.Cells[row, "B"] = accounts.Balance;
+            //}
+
+            ((Excel.Range)workSheet.Columns[1]).AutoFit();
+            ((Excel.Range)workSheet.Columns[2]).AutoFit();
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
-        }
-        
     }
-   
 }
+
 
