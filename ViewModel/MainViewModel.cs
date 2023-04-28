@@ -21,11 +21,11 @@ class MainViewModel : DependencyObject
 
     // статическая часть
     public static readonly DependencyProperty InputDataProperty1 = 
-        DependencyProperty.Register("InputData1", typeof(int), typeof(MainViewModel), new PropertyMetadata(0)); // 0 - значение по умолчанию (через запятую добавить метод при котором будет вызываться этот метод)
+        DependencyProperty.Register("InputValueMC", typeof(int), typeof(MainViewModel), new PropertyMetadata(0)); // 0 - значение по умолчанию (через запятую добавить метод при котором будет вызываться этот метод)
     public static readonly DependencyProperty InputDataProperty2 = 
-        DependencyProperty.Register("InputData2", typeof(int), typeof(MainViewModel), new PropertyMetadata(0)); // 0 - значение по умолчанию (через запятую добавить метод при котором будет вызываться этот метод)
+        DependencyProperty.Register("InputValuePCP", typeof(int), typeof(MainViewModel), new PropertyMetadata(0)); // 0 - значение по умолчанию (через запятую добавить метод при котором будет вызываться этот метод)
     public static readonly DependencyProperty InputDataProperty3 = 
-        DependencyProperty.Register("InputData3", typeof(int), typeof(MainViewModel), new PropertyMetadata(0)); // 0 - значение по умолчанию (через запятую добавить метод при котором будет вызываться этот метод)
+        DependencyProperty.Register("InputValueWDM", typeof(int), typeof(MainViewModel), new PropertyMetadata(0)); // 0 - значение по умолчанию (через запятую добавить метод при котором будет вызываться этот метод)
     
     public MainViewModel() // конструктор класса (здесь надо будет указать методы выгрузки введенных значений в БД) сами методы будут находиться в дериктиве Model
     {
