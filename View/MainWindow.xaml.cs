@@ -38,6 +38,51 @@ namespace Profitability.View
             DataContext = new MainViewModel();
         }
 
+        public void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                using (PovlTeContext db = new PovlTeContext())
+                {
+                    //db.Database.EnsureCreated();
+
+                    MessageBox.Show("создаем два объекта User");
+                    // создаем два объекта User
+                //    MobileCommunication record = new MobileCommunication { Name = "Tom", Age = 33 };  раскомментировать
+                    //User alice = new User { Name = "Alice", Age = 26 };
+                    MessageBox.Show("добавляем их в бд");
+                    // добавляем их в бд
+                    try
+                    {
+                    //    db.MobileCommunications.Add(record); раскоментировать
+                        //db.Users.Add(alice); 
+                        db.SaveChanges(); 
+                        //Console.WriteLine("Объекты успешно сохранены");
+                        MessageBox.Show("Объекты успешно сохранены");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
+                    }
+
+
+                    
+                
+                    // получаем объекты из бд и выводим на консоль
+                    // var users = db.Users.ToList();
+                    // Console.WriteLine("Список объектов:");
+                    // foreach (User u in users)
+                    // {
+                    //     Console.WriteLine($"{u.Id}.{u.Name} - {u.Age}");
+                    // }
+                }
+            }
+            catch (Exception ex)
+           {
+             MessageBox.Show(ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
+           }
+        }
+
         // public static void Log(string message) 
         // {
         //     File.AppendAllText("log.txt", message);
