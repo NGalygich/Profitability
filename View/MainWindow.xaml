@@ -42,7 +42,7 @@
 
         <Button x:Name="MobileCommunicationButton" Content="Сохранить" IsDefault="True" Click="SaveButton_Click" Grid.Column="4" Grid.Row="3" Width="200" Margin="5"/>
 
-        <TextBlock Grid.Column="2" Grid.Row="4" Text="Формирование отчета" Margin="5" />
+        <!-- <TextBlock Grid.Column="2" Grid.Row="4" Text="Формирование отчета" Margin="5" />
 
         <TextBlock Grid.Column="1" Grid.Row="5" Text="Период формирование" Margin="5" />
 
@@ -50,6 +50,6 @@
 
         <TextBlock Grid.Column="1" Grid.Row="7" Text="По:" Margin="5" />
 
-        <Button x:Name="SButton" Content="Сформировать" IsDefault="True" Click="GenerationButton_Click" Grid.Column="2" Grid.Row="8" Width="200" Margin="5"/>
+        <Button x:Name="SButton" Content="Сформировать" IsDefault="True" Click="GenerationButton_Click" Grid.Column="2" Grid.Row="8" Width="200" Margin="5"/> -->
     </Grid>
 </Window>
