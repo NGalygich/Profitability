@@ -43,5 +43,10 @@ namespace Profitability.View
             object _sender = sender;
             SavingToDB.Save(_sender);
         }        
+
+        public void GenerationButton_Click(object sender, RoutedEventArgs e)
+        {
+            RepoportGeneration.Generation();
+        }
     }
 }
