@@ -11,7 +11,7 @@ public partial class WorkingDaysMercenary
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    public DateTime? WorkingDate { get; set; }
+    public DateTime? Date { get; set; }
 
-    public double? NumberDays { get; set; }
+    public double? Value { get; set; }
 }

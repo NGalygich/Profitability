@@ -10,7 +10,8 @@ public partial class MobileCommunication
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    public DateTime? AccountingDate { get; set; }
 
-    public double? CommunicationsCost { get; set; }
+    public DateTime? Date { get; set; }
+
+    public double? Value { get; set; }
 }

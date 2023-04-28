@@ -11,7 +11,7 @@ public partial class PaymentClientsPlanned
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    public DateTime? DatePlanned { get; set; }
+    public DateTime? Date { get; set; }
 
-    public double? AmountPlanned { get; set; }
+    public double? Value { get; set; }
 }
