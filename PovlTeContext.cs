@@ -34,7 +34,7 @@ public partial class PovlTeContext : DbContext
                 .ToTable("MobileCommunication");
 
             entity.HasIndex(e => e.Date, "UQ__MobileCo__1FFD6BF98965FCCC").IsUnique();
-
+            entity.Property(e => e.Value).HasColumnType("float");
             entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
         });
