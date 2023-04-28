@@ -33,9 +33,9 @@ public partial class PovlTeContext : DbContext
                 .HasNoKey()
                 .ToTable("MobileCommunication");
 
-            entity.HasIndex(e => e.AccountingDate, "UQ__MobileCo__1FFD6BF98965FCCC").IsUnique();
+            entity.HasIndex(e => e.Date, "UQ__MobileCo__1FFD6BF98965FCCC").IsUnique();
 
-            entity.Property(e => e.AccountingDate).HasColumnType("date");
+            entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
         });
 
@@ -45,9 +45,9 @@ public partial class PovlTeContext : DbContext
                 .HasNoKey()
                 .ToTable("PaymentClientsPlanned");
 
-            entity.HasIndex(e => e.DatePlanned, "UQ__PaymentC__3DCF46488DE13DC8").IsUnique();
+            entity.HasIndex(e => e.Date, "UQ__PaymentC__3DCF46488DE13DC8").IsUnique();
 
-            entity.Property(e => e.DatePlanned).HasColumnType("date");
+            entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
         });
 
@@ -57,10 +57,10 @@ public partial class PovlTeContext : DbContext
                 .HasNoKey()
                 .ToTable("WorkingDaysMercenary");
 
-            entity.HasIndex(e => e.WorkingDate, "UQ__WorkingD__7FC03A07DC9F16C5").IsUnique();
+            entity.HasIndex(e => e.Date, "UQ__WorkingD__7FC03A07DC9F16C5").IsUnique();
 
+            entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
-            entity.Property(e => e.WorkingDate).HasColumnType("date");
         });
 
         OnModelCreatingPartial(modelBuilder);
