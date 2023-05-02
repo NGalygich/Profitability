@@ -27,11 +27,49 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
-        <ComboBox x:Name="Territory" Grid.Column="1" Grid.Row="1" Height="20" Width="120">
-            <TextBlock>Владивосток</TextBlock>
-            <TextBlock>Уссурийск</TextBlock>
+        <ComboBox x:Name="Parameter" Grid.Column="1" Grid.Row="1" Height="20" Width="120">
+            <TextBlock>Оплата клиентов плановая</TextBlock>
+            <TextBlock>Рабочие дни наемника</TextBlock>
+            <TextBlock>Мобильная связь</TextBlock>
         </ComboBox>
-        
+        <!-- <TabControl>
+            <TabItem.Header> 
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="3">Оплата клиентов плановая</TextBlock>
+                </StackPanel>
+            </TabItem.Header>
+            <TabItem.Content>
+
+            </TabItem.Content>
+           <TabItem.Header> 
+                Первая вкладка
+            </TabItem.Header>
+        </TabControl> -->
+        <ComboBox x:Name="Date" Grid.Column="2" Grid.Row="1" Height="20" Width="120">
+            <TextBlock>2022</TextBlock>
+            <TextBlock>2023</TextBlock>
+        </ComboBox>
+        <DataGrid AutoGenerateColumns="False" x:Name="CompetitorsGrid" Background="LightGray"
+                VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                Margin="0,0,0,0" Canvas.Left="0" Canvas.Top="0" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="7"
+                Width="{Binding ActualWidth, ElementName=CompetitorsInfo}"
+                Height="{Binding ActualHeight, ElementName=CompetitorsInfo}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Территория" FontSize="15" Binding="{Binding Territory}" Width="*"/>
+                        <DataGridTextColumn Header="Январь" FontSize="15" Binding="{Binding Month_1}" Width="*"/>
+                        <DataGridTextColumn Header="Февраль" FontSize="15" Binding="{Binding Month_2}" Width="*"/>
+                        <DataGridTextColumn Header="Март" FontSize="15" Binding="{Binding Month_3}" Width="*"/>
+                        <DataGridTextColumn Header="Апрель" FontSize="15" Binding="{Binding Month_4}" Width="*"/>
+                        <DataGridTextColumn Header="Май" FontSize="15" Binding="{Binding Month_5}" Width="*"/>
+                        <DataGridTextColumn Header="Июнь" FontSize="15" Binding="{Binding Month_6}" Width="*"/>
+                        <DataGridTextColumn Header="Июль" FontSize="15" Binding="{Binding Month_7}" Width="*"/>
+                        <DataGridTextColumn Header="Август" FontSize="15" Binding="{Binding Month_8}" Width="*"/>
+                        <DataGridTextColumn Header="Сентябрь" FontSize="15" Binding="{Binding Month_9}" Width="*"/>
+                        <DataGridTextColumn Header="Октябрь" FontSize="15" Binding="{Binding Month_10}" Width="*"/>
+                        <DataGridTextColumn Header="Ноябрь" FontSize="15" Binding="{Binding Month_11}" Width="*"/>
+                        <DataGridTextColumn Header="Декабрь" FontSize="15" Binding="{Binding Month_12}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
         <!-- <TextBlock Grid.Column="1" Grid.Row="1" Text="Плановая оплата клиентов:" Margin="5" />
         <TextBox x:Name="PaymentClientsPlanned" Grid.Column="2" Grid.Row="1" Text="{Binding InputValuePCP}" Width="200" Margin="5" />
 
